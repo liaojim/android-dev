@@ -16,7 +16,7 @@ public class StatusActivity extends Activity {
 
     public static final int MAX_CHARS = 80;
     private EditText editStatus;
-    private Button buttonSubmit;
+    //private Button buttonSubmit;
     private TextView charsRemaining;
 
 
@@ -26,7 +26,7 @@ public class StatusActivity extends Activity {
         setContentView(R.layout.activity_status);
 
         editStatus = (EditText) findViewById(R.id.editText);
-        buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
+        //buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
         charsRemaining = (TextView) findViewById(R.id.textMaxChars);
 
         editStatus.addTextChangedListener(new TextWatcher() {
@@ -45,7 +45,7 @@ public class StatusActivity extends Activity {
                 else
                     editStatus.setTextColor(getResources().getColor(R.color.normal));
 
-                buttonSubmit.setEnabled(numLeft > -1);
+                //buttonSubmit.setEnabled(numLeft > -1);
             }
 
             @Override
@@ -55,12 +55,12 @@ public class StatusActivity extends Activity {
 
         });
 
-        buttonSubmit.setOnClickListener(new View.OnClickListener() {
+        /*buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
-        });
+        });*/
     }
 
 
@@ -69,6 +69,7 @@ public class StatusActivity extends Activity {
         
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.status, menu);
+
         return true;
     }
 
@@ -78,10 +79,17 @@ public class StatusActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+
+        switch (id) {
+            case R.id.button:
+                // submit;
+                return true;
+            case R.id.action_settings:
+                //settings;
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
 }
