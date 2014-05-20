@@ -21,6 +21,11 @@
             android:name="com.thenewcircle.yamba.StatusService"
             android:exported="false" >
         </service>
+
+        <activity
+            android:name="com.thenewcircle.yamba.PrefsActivity"
+            android:label="@string/title_activity_prefs" >
+        </activity>
     </application>
 
 </manifest>

@@ -101,7 +101,8 @@ public class StatusActivity extends Activity {
                 editStatus.getText().clear();
                 return true;
             case R.id.action_settings:
-                //settings;
+                Intent prefIntent = new Intent(this, PrefsActivity.class);
+                startActivity(prefIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
