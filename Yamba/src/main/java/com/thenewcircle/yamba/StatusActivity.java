@@ -21,6 +21,7 @@ public class StatusActivity extends Activity {
 
     public static final int MAX_CHARS = 80;
     public static final String TAG="Yamba."+StatusActivity.class.getSimpleName();
+    public static final String STATUS = "status";
     private EditText editStatus;
     //private Button buttonSubmit;
     private TextView charsRemaining;
@@ -95,7 +96,7 @@ public class StatusActivity extends Activity {
             case R.id.button:
                 // submit;
                 Intent statusIntent = new Intent(this, StatusService.class);
-                statusIntent.putExtra("status", editStatus.getText().toString());
+                statusIntent.putExtra(STATUS, editStatus.getText().toString());
                 startService(statusIntent);
                 editStatus.getText().clear();
                 return true;
