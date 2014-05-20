@@ -53,6 +53,7 @@ public class StatusService extends IntentService {
 
         try {
             client.postStatus(status);
+            builder.setContentTitle("posted");
 
         }catch (YambaClientException e) {
             Log.e(TAG, "Unable t post status " + status, e);
