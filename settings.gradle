@@ -1,1 +1,1 @@
-include ':Yamba'
+include ':Yamba', ':YambaClientLib'

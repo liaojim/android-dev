@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Yamba/Yamba.iml" filepath="$PROJECT_DIR$/Yamba/Yamba.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YambaClientLib/YambaClientLib.iml" filepath="$PROJECT_DIR$/YambaClientLib/YambaClientLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/YambaProject.iml" filepath="$PROJECT_DIR$/YambaProject.iml" />
     </modules>
   </component>

@@ -1,9 +1,11 @@
 package com.thenewcircle.yamba;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,13 +13,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.marakana.android.yamba.clientlib.YambaClient;
+import com.marakana.android.yamba.clientlib.YambaClientException;
+
 
 public class StatusActivity extends Activity {
 
     public static final int MAX_CHARS = 80;
+    public static final String TAG="Yamba."+StatusActivity.class.getSimpleName();
     private EditText editStatus;
     //private Button buttonSubmit;
     private TextView charsRemaining;
+    private MenuItem submitMenu;
+    private YambaClient client;
 
 
     @Override
@@ -40,12 +48,13 @@ public class StatusActivity extends Activity {
                 int numLeft = MAX_CHARS - editStatus.length();
                 charsRemaining.setText(numLeft +"");
 
-                if (numLeft < 0)
-                    editStatus.setTextColor(getResources().getColor(R.color.warning));
-                else
-                    editStatus.setTextColor(getResources().getColor(R.color.normal));
+                //if (numLeft < 0)
+                    //submitMenu.setTextColor(getResources().getColor(R.color.warning));
+                //else
+                    //submitMenu.setTextColor(getResources().getColor(R.color.normal));
 
                 //buttonSubmit.setEnabled(numLeft > -1);
+                submitMenu.setEnabled(numLeft > -1 && charSequence.length()>0);
             }
 
             @Override
@@ -70,6 +79,8 @@ public class StatusActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.status, menu);
 
+        submitMenu = menu.findItem(R.id.button);
+
         return true;
     }
 
@@ -83,6 +94,10 @@ public class StatusActivity extends Activity {
         switch (id) {
             case R.id.button:
                 // submit;
+                Intent statusIntent = new Intent(this, StatusService.class);
+                statusIntent.putExtra("status", editStatus.getText().toString());
+                startService(statusIntent);
+                editStatus.getText().clear();
                 return true;
             case R.id.action_settings:
                 //settings;
@@ -90,6 +105,20 @@ public class StatusActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void postStatus() {
+        client = new YambaClient("student", "password");
+        String status = editStatus.getText().toString();
+        try {
+
+            Log.d(TAG, "posting: " + status);
+            client.postStatus(status);
+
+        }catch(YambaClientException e) {
+            Log.e(TAG, "Unable to post Status " + status);
+        }
+
     }
 
 }
