@@ -4,6 +4,8 @@ import android.app.IntentService;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.marakana.android.yamba.clientlib.YambaClient;
@@ -40,7 +42,10 @@ public class StatusService extends IntentService {
     @Override
     public void onCreate() {
         super.onCreate();
-        client = new YambaClient(STUDENT, PASSWORD);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String username=prefs.getString(STUDENT, STUDENT);
+        String password=prefs.getString(PASSWORD, PASSWORD);
+        client = new YambaClient(username, password);
 
     }
 
