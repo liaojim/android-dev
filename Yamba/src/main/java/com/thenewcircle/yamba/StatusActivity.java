@@ -16,6 +16,8 @@ import android.widget.TextView;
 import com.marakana.android.yamba.clientlib.YambaClient;
 import com.marakana.android.yamba.clientlib.YambaClientException;
 
+import static com.thenewcircle.yamba.YambaApp.*;
+
 
 public class StatusActivity extends Activity {
 
@@ -99,6 +101,12 @@ public class StatusActivity extends Activity {
                 statusIntent.putExtra(STATUS, editStatus.getText().toString());
                 startService(statusIntent);
                 editStatus.getText().clear();
+                //YambaApp yambaApp = (YambaApp)this.getApplication();
+                //yambaApp.stopAlarmManager();
+                return true;
+            case R.id.refresh:
+                Intent refreshIntent = new Intent(this, TimelineService.class);
+                startService(refreshIntent);
                 return true;
             case R.id.action_settings:
                 Intent prefIntent = new Intent(this, PrefsActivity.class);
