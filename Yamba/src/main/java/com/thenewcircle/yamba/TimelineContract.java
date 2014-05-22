@@ -26,5 +26,7 @@ public class TimelineContract {
         }
     }
 
+    public static final String[] MAX_TIME_CREATED =  { "MAX (" + Columns.TIME_CREATED + ")"};
+
     private TimelineContract() {}
 }

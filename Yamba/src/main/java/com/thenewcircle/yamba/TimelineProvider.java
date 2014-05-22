@@ -1,12 +1,13 @@
 package com.thenewcircle.yamba;
 
-        import android.content.ContentProvider;
+import android.content.ContentProvider;
         import android.content.ContentUris;
         import android.content.ContentValues;
         import android.content.UriMatcher;
         import android.database.Cursor;
         import android.database.sqlite.SQLiteDatabase;
-        import android.net.Uri;
+import android.database.sqlite.SQLiteQueryBuilder;
+import android.net.Uri;
         import android.util.Log;
 
 public class TimelineProvider extends ContentProvider {
@@ -73,8 +74,22 @@ public class TimelineProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
-        // TODO: Implement this to handle query requests from clients.
-        throw new UnsupportedOperationException("Not yet implemented");
+        SQLiteDatabase db = timelineHelper.getReadableDatabase();
+
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+        qb.setTables(TimelineHelper.TABLE);
+        switch (URI_MATCHER.match(uri)) {
+            case STATUS_DIR:
+                // TODO Default Sort Order
+                break;
+            case STATUS_ITEM:
+                qb.appendWhere(TimelineContract.Columns.ID + "=" + uri.getLastPathSegment());
+                break;
+        }
+
+        Cursor c = qb.query(db, projection, selection, selectionArgs, null, null, null);
+        c.setNotificationUri(getContext().getContentResolver(), uri);
+        return c;
     }
 
     @Override
