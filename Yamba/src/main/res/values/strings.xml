@@ -8,5 +8,6 @@
     <string name="maxChars">170</string>
     <string name="buttonSubmit">Submit</string>
     <string name="title_activity_prefs">PrefsActivity</string>
+    <string name="title_activity_timeline">TimelineActivity</string>
 
 </resources>

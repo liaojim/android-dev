@@ -87,7 +87,11 @@ public class TimelineProvider extends ContentProvider {
                 break;
         }
 
-        Cursor c = qb.query(db, projection, selection, selectionArgs, null, null, null);
+        if(sortOrder == null || sortOrder.trim().length() == 0) {
+            sortOrder = TimelineContract.DEFAULT_SORT_ORDER;
+        }
+
+        Cursor c = qb.query(db, projection, selection, selectionArgs, null, null,sortOrder);
         c.setNotificationUri(getContext().getContentResolver(), uri);
         return c;
     }

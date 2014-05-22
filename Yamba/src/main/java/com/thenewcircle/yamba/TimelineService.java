@@ -1,6 +1,8 @@
 package com.thenewcircle.yamba;
 
 import android.app.IntentService;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -83,24 +85,38 @@ public class TimelineService extends IntentService {
                 public void onTimelineStatus(long id, Date createdAt, String user, String msg) {
                     Log.d(TAG, "onTimelineStatus " + user + ": " + msg);
                     values.put(ID, id);
+
+                    String notificationMessage=null;
+                    String notificationTitle = null;
+                    Notification.Builder builder=new Notification.Builder(getBaseContext());
+                    builder.setSmallIcon(R.drawable.ic_launcher);
+
                     long time = createdAt.getTime();
                     if(time > maxTime) {
                         values.put(TIME_CREATED, time);
                         values.put(USER, user);
                         values.put(MESSAGE, msg);
                         resolver.insert(TimelineContract.CONTENT_URI, values);
+                        notificationMessage = "ID:" + id + " inserted";
+                        notificationTitle = "Data inserted";
                     }
                     else {
+                        notificationMessage = "ID:" + id + " already exist in DB";
+                        notificationTitle = "DB Insert failed";
+
                         Log.d(TAG, id + " already inserted");
+
                     }
+                    builder.setContentTitle(notificationTitle);
+                    builder.setContentText(notificationMessage);
+                    NotificationManager notificationManager=(NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                    notificationManager.notify(100, builder.getNotification());
+
                 }
             });
         } catch (YambaClientException e) {
             Log.e(TAG,"Unable to get timeline:"+ e.getMessage(),e);
 
-        }
-
-        if (intent != null) {
         }
     }
 

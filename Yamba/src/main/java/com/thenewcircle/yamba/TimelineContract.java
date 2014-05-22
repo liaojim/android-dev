@@ -27,6 +27,7 @@ public class TimelineContract {
     }
 
     public static final String[] MAX_TIME_CREATED =  { "MAX (" + Columns.TIME_CREATED + ")"};
+    public static final String DEFAULT_SORT_ORDER = Columns.TIME_CREATED + " DESC";
 
     private TimelineContract() {}
 }
