@@ -3,6 +3,7 @@
     <string-array name="intervals">
         <item>None</item>
         <item>Every 10 seconds</item>
+        <item>Every minute</item>
         <item>Every Fifteen minutes</item>
         <item>Every Half Hour</item>
         <item>Every Hour</item>
@@ -12,6 +13,7 @@
     <string-array name="intervalValues">
         <item>0</item>
         <item>10000</item>
+        <item>60000</item>
         <item>900000</item>
         <item>1800000</item>
         <item>3600000</item>
