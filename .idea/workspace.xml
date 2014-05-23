@@ -23,9 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ddcd062-cb5e-4e5a-9518-76087c6a868b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineActivity.java" afterPath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineDetails.java" afterPath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineDetails.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineFragment.java" afterPath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="a176112a-2fc0-4699-a4d1-78f3e11c7260" name="New changelist" comment="">
@@ -52,11 +49,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TimelineActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TimelineActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.0808082" vertical-offset="0" max-vertical-offset="2205">
-              <caret line="137" column="74" selection-start-line="137" selection-start-column="74" selection-end-line="137" selection-end-column="74" />
+            <state vertical-scroll-proportion="-12.692307" vertical-offset="1650" max-vertical-offset="2205">
+              <caret line="147" column="45" selection-start-line="147" selection-start-column="45" selection-end-line="147" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TimelineProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="898" max-vertical-offset="1545">
+              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -131,31 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FragmentManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-19/android/app/FragmentManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="12622" max-vertical-offset="29580">
-              <caret line="920" column="0" selection-start-line="920" selection-start-column="0" selection-end-line="920" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/sdk/sources/android-19/android/app/Fragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="23062" max-vertical-offset="26670">
-              <caret line="1694" column="0" selection-start-line="1694" selection-start-column="0" selection-end-line="1694" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TimelineFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.8846154" vertical-offset="1523" max-vertical-offset="1845">
-              <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.7307693" vertical-offset="1110" max-vertical-offset="1845">
+              <caret line="80" column="78" selection-start-line="80" selection-start-column="57" selection-end-line="80" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3539#3540#0" expanded="true" />
@@ -163,6 +150,16 @@
                 <element signature="e#3649#3650#0" expanded="true" />
                 <element signature="e#3689#3690#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Yamba/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.1852861" vertical-offset="211" max-vertical-offset="945">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2319,7 +2316,11 @@
       <created>1400801634291</created>
       <updated>1400801634291</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Saved id between landscape and portrait modes">
+      <created>1400824258988</created>
+      <updated>1400824258988</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2347,7 +2348,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41732284" sideWeight="0.21812822" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41732284" sideWeight="0.2179676" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3497791" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2357,10 +2358,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40682414" sideWeight="0.7312224" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328084" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40682414" sideWeight="0.7312224" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53412074" sideWeight="0.499631" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1496063" sideWeight="0.7930525" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39895013" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.224595" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42913386" sideWeight="0.4992636" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35826772" sideWeight="0.5198822" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32939634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2494465" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2434,7 +2435,8 @@
     <MESSAGE value="Timeline Activity -&gt; Status Activity" />
     <MESSAGE value="Landscape mode to show details when a row is clicked" />
     <MESSAGE value="Portrait mode to show details when a row is clicked" />
-    <option name="LAST_COMMIT_MESSAGE" value="Portrait mode to show details when a row is clicked" />
+    <MESSAGE value="Saved id between landscape and portrait modes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saved id between landscape and portrait modes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2705,14 +2707,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="898" max-vertical-offset="1545">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/StatusActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2100">
@@ -2729,18 +2723,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Yamba/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding>
-            <element signature="e#395#413#0" expanded="true" />
-            <element signature="e#878#909#0" expanded="true" />
-            <element signature="e#1401#1431#0" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Yamba/src/main/res/menu/timeline_activity_menu.xml">
@@ -2872,20 +2854,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8846154" vertical-offset="1523" max-vertical-offset="1845">
-          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3539#3540#0" expanded="true" />
-            <element signature="e#3579#3580#0" expanded="true" />
-            <element signature="e#3649#3650#0" expanded="true" />
-            <element signature="e#3689#3690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineDetails.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.8846154" vertical-offset="165" max-vertical-offset="1365">
@@ -2896,8 +2864,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.0808082" vertical-offset="0" max-vertical-offset="2205">
-          <caret line="137" column="74" selection-start-line="137" selection-start-column="74" selection-end-line="137" selection-end-column="74" />
+        <state vertical-scroll-proportion="-12.692307" vertical-offset="1650" max-vertical-offset="2205">
+          <caret line="147" column="45" selection-start-line="147" selection-start-column="45" selection-end-line="147" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="898" max-vertical-offset="1545">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7307693" vertical-offset="1110" max-vertical-offset="1845">
+          <caret line="80" column="78" selection-start-line="80" selection-start-column="57" selection-end-line="80" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3539#3540#0" expanded="true" />
+            <element signature="e#3579#3580#0" expanded="true" />
+            <element signature="e#3649#3650#0" expanded="true" />
+            <element signature="e#3689#3690#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Yamba/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.1852861" vertical-offset="211" max-vertical-offset="945">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
