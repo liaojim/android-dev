@@ -1,5 +1,6 @@
 package com.thenewcircle.yamba;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentUris;
 import android.database.Cursor;
@@ -30,30 +31,56 @@ public class TimelineDetails extends Fragment {
 
     private Long id = null;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.d(TAG, "onCreateView " );
         RelativeLayout layout = (RelativeLayout) inflater.inflate(R.layout.fragment_details, container, false);
 
         textUser =(TextView) layout.findViewById(R.id.textUsername);
         textStatus = (TextView) layout.findViewById(R.id.textStatus);
         textTime = (TextView) layout.findViewById(R.id.textTime);
 
+        Activity activity = getActivity();
+        if(activity != null)
+            showDetails();
+
         return layout;
+    }
+
+
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        Log.d(TAG, "onActivityCreated " );
+        super.onActivityCreated(savedInstanceState);
+        Activity activity = getActivity();
+        if(activity != null)
+            showDetails();
     }
 
     public void updateView(Long id) {
         Log.d(TAG, "updateView " + id);
-        this.id = id;
-        if(getActivity() != null) showDetails();
+
+        setId(id);
+
+        Activity activity = getActivity();
+       if(activity != null)
+            showDetails();
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        if(id != null) showDetails();
+    public void setId(Long id) {
+        if (id != null) {
+            this.id = id;
+        }
     }
+
 
     private void showDetails() {
+        Log.d(TAG, "showDetails - " + id);
+        if (id==null)
+            return;
+
         Uri uri = ContentUris.withAppendedId(TimelineContract.CONTENT_URI, id);
         Cursor cursor = getActivity().getContentResolver().query(uri, null, null, null, null);
 

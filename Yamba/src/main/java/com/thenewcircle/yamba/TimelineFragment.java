@@ -111,7 +111,7 @@ public class TimelineFragment extends ListFragment
     public void onListItemClick(ListView l, View v, int position, long id) {
         if(getActivity() instanceof DisplayDetails) {
             DisplayDetails displayDetails = (DisplayDetails) getActivity();
-            displayDetails.showDetails(id);
+            displayDetails.showDetails(Long.valueOf(id));
         }
         super.onListItemClick(l, v, position, id);
     }
