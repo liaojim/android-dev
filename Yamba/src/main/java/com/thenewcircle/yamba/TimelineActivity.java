@@ -1,5 +1,6 @@
 package com.thenewcircle.yamba;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -68,10 +69,16 @@ public class TimelineActivity extends Activity implements TimelineFragment.Displ
         if(detailsContainer != null ) {
             tx.replace(R.id.details_fragment_container, new TimelineDetails(), DETAILS);
             tx.addToBackStack(DETAILS);
+            tx.commit();
         }
 
-        tx.replace(R.id.list_fragment_container, new TimelineFragment(), LIST);
-        tx.commit();
+        //tx.replace(R.id.list_fragment_container, new TimelineFragment(), LIST);
+        //tx.commit();
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        actionBar.setDisplayShowTitleEnabled(false);
+
     }
 
     private int getDeviceOrientation() {
@@ -85,6 +92,28 @@ public class TimelineActivity extends Activity implements TimelineFragment.Displ
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        ActionBar actionBar = getActionBar();
+        ActionBar.Tab tab = actionBar.newTab();
+        tab.setText("Timeline");
+        tab.setTabListener(new TabListener<TimelineFragment>(this, "timeline", TimelineFragment.class));
+        actionBar.addTab(tab, true);
+
+        tab = actionBar.newTab();
+        tab.setText("Status");
+        tab.setTabListener(new TabListener<StatusFragment>(this, "status", StatusFragment.class));
+        actionBar.addTab(tab);
+    }
+
+    @Override
+    protected void onPause() {
+        getActionBar().removeAllTabs();
+        super.onPause();
+    }
+
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.timeline_activity_menu, menu);
@@ -94,10 +123,10 @@ public class TimelineActivity extends Activity implements TimelineFragment.Displ
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
          switch (item.getItemId()) {
-            case R.id.status:
-                Intent statusIntent = new Intent(this, StatusActivity.class);
-                startActivity(statusIntent);
-                return true;
+             case R.id.action_settings:
+                 Intent prefIntent = new Intent(this, PrefsActivity.class);
+                 startActivity(prefIntent);
+                 return true;
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -120,7 +149,7 @@ public class TimelineActivity extends Activity implements TimelineFragment.Displ
 
         if(details != null) {
             details.setId(id);
-            Log.d(TAG,"showDetials() - details is not null");
+            Log.d(TAG, "showDetials() - details is not null");
         }else {
             Log.d(TAG,"showDetials() - details is null");
 
@@ -137,7 +166,7 @@ public class TimelineActivity extends Activity implements TimelineFragment.Displ
                 // portrait - replace the list fragment with detail fragment.
                 FragmentTransaction tx = fragmentManager.beginTransaction();
                 TimelineDetails timelineDetails = new TimelineDetails();
-                tx.replace(R.id.list_fragment_container, timelineDetails, DETAILS);
+                tx.replace(R.id.fragment_container, timelineDetails, DETAILS);
                 tx.addToBackStack("Details");
                 tx.commit();
                 timelineDetails.updateView(id);

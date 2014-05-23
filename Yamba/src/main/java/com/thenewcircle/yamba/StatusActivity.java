@@ -82,7 +82,7 @@ public class StatusActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.status, menu);
 
-        submitMenu = menu.findItem(R.id.button);
+        submitMenu = menu.findItem(R.id.submit);
 
         return true;
     }
@@ -95,7 +95,7 @@ public class StatusActivity extends Activity {
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.button:
+            case R.id.submit:
                 // submit;
                 Intent statusIntent = new Intent(this, StatusService.class);
                 statusIntent.putExtra(STATUS, editStatus.getText().toString());

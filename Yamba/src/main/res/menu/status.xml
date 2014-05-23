@@ -2,20 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.thenewcircle.yamba.StatusActivity" >
 
-    <item android:id="@+id/button"
+    <item android:id="@+id/submit"
         android:showAsAction="always"
         android:title="@string/buttonSubmit"
         android:icon="@android:drawable/ic_menu_send"/>
 
-    <item android:id="@+id/refresh"
-        android:title="Refresh"
-        android:icon="@android:drawable/ic_menu_more"
-        android:showAsAction="always"/>
-
-
-
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
 </menu>

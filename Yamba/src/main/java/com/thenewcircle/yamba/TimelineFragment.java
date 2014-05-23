@@ -52,27 +52,25 @@ public class TimelineFragment extends ListFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setHasOptionsMenu(true);
+        setHasOptionsMenu(true);
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        //inflater.inflate(R.menu.timeline, menu);
+        inflater.inflate(R.menu.timeline, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-        /*
         switch (item.getItemId()) {
             case R.id.refresh:
-                Intent refreshIntent = new Intent(getActivity(), TimelineService.class);
-                getActivity().startService(refreshIntent);
+                Intent refresh = new Intent(getActivity(), TimelineService.class);
+                getActivity().startService(refresh);
                 return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }*/
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
