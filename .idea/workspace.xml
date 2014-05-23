@@ -23,17 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ddcd062-cb5e-4e5a-9518-76087c6a868b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/StatusFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TabListener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Yamba/src/main/res/layout/fragment_status.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/StatusActivity.java" afterPath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/StatusActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineActivity.java" afterPath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineFragment.java" afterPath="$PROJECT_DIR$/Yamba/src/main/java/com/thenewcircle/yamba/TimelineFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yamba/src/main/res/layout/activity_timeline.xml" afterPath="$PROJECT_DIR$/Yamba/src/main/res/layout/activity_timeline.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yamba/src/main/res/layout-land/activity_timeline.xml" afterPath="$PROJECT_DIR$/Yamba/src/main/res/layout-land/activity_timeline.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yamba/src/main/res/menu/status.xml" afterPath="$PROJECT_DIR$/Yamba/src/main/res/menu/status.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yamba/src/main/res/menu/timeline.xml" afterPath="$PROJECT_DIR$/Yamba/src/main/res/menu/timeline.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Yamba/src/main/res/menu/timeline_activity_menu.xml" afterPath="$PROJECT_DIR$/Yamba/src/main/res/menu/timeline_activity_menu.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="a176112a-2fc0-4699-a4d1-78f3e11c7260" name="New changelist" comment="">
@@ -2373,7 +2362,11 @@
       <created>1400876353011</created>
       <updated>1400876353011</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="tab working">
+      <created>1400878186648</created>
+      <updated>1400878186648</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2489,7 +2482,8 @@
     <MESSAGE value="Landscape mode to show details when a row is clicked" />
     <MESSAGE value="Portrait mode to show details when a row is clicked" />
     <MESSAGE value="Saved id between landscape and portrait modes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Saved id between landscape and portrait modes" />
+    <MESSAGE value="tab working" />
+    <option name="LAST_COMMIT_MESSAGE" value="tab working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
