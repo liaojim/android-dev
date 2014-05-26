@@ -6,5 +6,9 @@
         android:showAsAction="always"
         android:title="@string/buttonSubmit"
         android:icon="@android:drawable/ic_menu_send"/>
+    <item android:id="@+id/myLocation"
+        android:showAsAction="always"
+        android:title="GPSLocation"
+        android:icon="@android:drawable/ic_menu_mylocation"/>
 
 </menu>

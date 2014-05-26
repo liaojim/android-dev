@@ -1,9 +1,13 @@
 package com.thenewcircle.yamba;
 
 import android.app.Fragment;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Address;
 import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -19,6 +23,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.marakana.android.yamba.clientlib.YambaClient;
+import com.marakana.android.yamba.clientlib.YambaClientException;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by geoff on 5/23/14.
@@ -49,6 +60,7 @@ public class StatusFragment extends Fragment implements LocationListener {
         String provider = locationManager.getBestProvider(criteria, true);
 
         locationManager.requestLocationUpdates(provider, 2000, 2, this);
+
     }
 
     @Override
@@ -111,16 +123,27 @@ public class StatusFragment extends Fragment implements LocationListener {
                     statusIntent.putExtra(StatusService.LAT, location.getLatitude());
                     statusIntent.putExtra(StatusService.LON, location.getLongitude());
                 }
-
                 getActivity().startService(statusIntent);
                 editStatus.getText().clear();
                 return true;
 
+            case R.id.myLocation:
+                Intent locationIntent = new Intent(getActivity(), StatusService.class);
+                //locationIntent.putExtra(StatusService.STATUS, editStatus.getText().toString());
+                if(location != null) {
+                    locationIntent.putExtra(StatusService.LAT, location.getLatitude());
+                    locationIntent.putExtra(StatusService.LON, location.getLongitude());
+                }
+                getActivity().startService(locationIntent);
+                //editStatus.getText().clear();
+                return true;
+            default:
+                ;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
+     @Override
     public void onLocationChanged(Location location) {
         Log.d(TAG, "onLocationChanged " + location.getLatitude() + ", " + location.getLongitude());
         this.location = location;
