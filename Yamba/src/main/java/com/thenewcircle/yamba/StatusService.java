@@ -24,6 +24,9 @@ public class StatusService extends IntentService {
     public static final String STATUS = "status";
     public static final String STUDENT = "student";
     public static final String PASSWORD = "password";
+    private static final int ID = 100;
+    public static final String LAT = "lat";
+    public static final String LON = "lon";
     private YambaClient client;
 
     public StatusService() {
@@ -32,12 +35,18 @@ public class StatusService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        Log.d(TAG, "onHandleIntest()");
+        Log.d(TAG, "onHandleIntent");
         if (intent != null) {
-            String status =intent.getStringExtra(STATUS);
-            postStatus(status);
-        }
-    }
+            String status = intent.getStringExtra(STATUS);
+            if(intent.hasExtra(LAT)) {
+                Log.d(TAG, "onHandleIntent - there is lat and lon from intent extra");
+                postStatus(status, intent.getDoubleExtra(LAT, 0), intent.getDoubleExtra(LON, 0));
+            }
+            else {
+                Log.d(TAG, "onHandleIntent - no lat and lon from intent extra");
+                postStatus(status, null, null);
+            }
+        }    }
 
     @Override
     public void onCreate() {
@@ -49,28 +58,33 @@ public class StatusService extends IntentService {
 
     }
 
-    private void postStatus(String status) {
-        Log.d(TAG, "postStatus()");
-
-        Notification.Builder builder=new Notification.Builder(this);
+    private void postStatus(String status, Double lat, Double lon) {
+        Log.d(TAG, "posting: " + status + " lat:" + lat + " lon:" + lon);
+        Notification.Builder builder = new Notification.Builder(this);
         builder.setSmallIcon(R.drawable.ic_launcher);
         builder.setContentText(status);
-
         try {
-            client.postStatus(status);
-            builder.setContentTitle("posted");
-
-        }catch (YambaClientException e) {
-            Log.e(TAG, "Unable t post status " + status, e);
-            //notify user of failure
-            builder.setContentTitle("error posting message");
+            YambaClient client = ((YambaApp)getApplication()).getClient();
+            if(lat == null) {
+                Log.d(TAG, "aclling client.postStatus w/o lat, and lon");
+                client.postStatus(status);
+            }
+            else {
+                Log.d(TAG, "aclling client.postStatus witgh lat, and lon " + " lat:" + lat + " lon:" + lon);
+                client.postStatus(status, lat, lon);
+            }
+            builder.setContentTitle("Posted");
+        } catch (YambaClientException e) {
+            Log.e(TAG, "Unable to post Status " + status, e);
+            builder.setContentTitle("Error posting message");
             builder.setContentInfo(e.getMessage());
-        }finally {
-            NotificationManager notificationManager=(NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            notificationManager.notify(100, builder.getNotification());
-
         }
-
+        finally {
+            NotificationManager notificationManager = (NotificationManager)
+                    getSystemService(NOTIFICATION_SERVICE);
+            notificationManager.notify(ID, builder.getNotification());
+        }
     }
+
 
 }
